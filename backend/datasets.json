@@ -1,0 +1,60 @@
+{
+    "datasets": [
+        {
+            "name": "wikiart",
+            "collate_fn": "wikiart_collate_fn",
+            "zoom_levels": 10,
+            "dataset_class": "SupportDatasetForImagesWikiArt",
+            "dir_name": "wikiart",
+            "website_name": "WikiArt"
+        },
+        {
+            "name": "best_artworks",
+            "collate_fn": "best_artworks_collate_fn",
+            "zoom_levels": 7,
+            "dataset_class": "SupportDatasetForImagesBestArtworks",
+            "dir_name": "best_artworks",
+            "website_name": "Best Artworks"
+        },
+        {
+            "name": "CelebAHQ",
+            "collate_fn": "common_collate_fn",
+            "zoom_levels": 9,
+            "dataset_class": "SupportDatasetForImagesCommon",
+            "dir_name": "celebahq",
+            "website_name": "CelebA-HQ"
+        },
+        {
+            "name": "MNIST",
+            "collate_fn": "common_collate_fn",
+            "zoom_levels": 9,
+            "dataset_class": "SupportDatasetForImagesCommon",
+            "dir_name": "MNIST",
+            "website_name": "MNIST"
+        },
+        {
+            "name": "CIFAR100",
+            "collate_fn": "common_collate_fn",
+            "zoom_levels": 10,
+            "dataset_class": "SupportDatasetForImagesCommon",
+            "dir_name": "CIFAR-100",
+            "website_name": "CIFAR 100"
+        },
+        {
+            "name": "FashionMNIST",
+            "collate_fn": "common_collate_fn",
+            "zoom_levels": 9,
+            "dataset_class": "SupportDatasetForImagesCommon",
+            "dir_name": "Fashion-MNIST",
+            "website_name": "Fashion MNIST"
+        },
+        {
+            "name": "COCO2017",
+            "collate_fn": "common_collate_fn",
+            "zoom_levels": 10,
+            "dataset_class": "SupportDatasetForImagesCommon",
+            "dir_name": "COCO-2017",
+            "website_name": "COCO 2017"
+        }
+    ]
+}

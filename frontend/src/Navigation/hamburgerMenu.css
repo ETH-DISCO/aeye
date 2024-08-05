@@ -1,0 +1,123 @@
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Media queries for position of the menu from the top of the page */
+@media (min-width: 320px) and (max-width: 480px) {
+    .bm-menu-wrap, .bm-overlay {
+        top: var(--h-sticky-320)
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .bm-menu-wrap, .bm-overlay {
+        top: var(--h-sticky-480)
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bm-menu-wrap, .bm-overlay {
+        top: var(--h-sticky-768)
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .bm-menu-wrap, .bm-overlay {
+        top: var(--h-sticky-1024)
+    }
+}
+
+@media (min-width: 1201px) {
+    .bm-menu-wrap, .bm-overlay {
+        top: var(--h-sticky-1200)
+    }
+}
+
+/* General sidebar styles */
+.bm-menu {
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Media queries for the width of the hamburger menu */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .bm-menu-wrap {
+        width: 100vw !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .bm-menu-wrap {
+        width: 320px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bm-menu-wrap {
+        width: 320px !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .bm-menu-wrap {
+        width: 400px !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    .bm-menu-wrap {
+        width: 400px !important;
+    }
+}
+
+/* Media queries for the height of the items in the hamburger menu */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .bm-item {
+        height: var(--h-item-320) !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .bm-item {
+        height: var(--h-item-480) !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bm-item {
+        height: var(--h-item-768) !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .bm-item {
+        height: var(--h-item-1024) !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    .bm-item {
+        height: var(--h-item-1200) !important;
+    }
+}

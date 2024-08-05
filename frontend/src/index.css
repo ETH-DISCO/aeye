@@ -1,0 +1,398 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define variables for the height of the sticky bar */
+:root {
+    --h-sticky-320: 64px;
+    --h-sticky-480: 72px;
+    --h-sticky-768: 78px;
+    --h-sticky-1024: 84px;
+    --h-sticky-1200: 90px;
+
+    --m-canvas-side-320: 10px;
+    --m-canvas-side-480: 15px;
+    --m-canvas-side-768: 20px;
+    --m-canvas-side-1024: 20px;
+    --m-canvas-side-1200: 20px;
+
+    --m-canvas-top-320: 10px;
+    --m-canvas-top-480: 15px;
+    --m-canvas-top-768: 20px;
+    --m-canvas-top-1024: 20px;
+    --m-canvas-top-1200: 20px;
+
+    --searchbar-width-320: 250px;
+    --searchbar-width-480: 380px;
+    --searchbar-width-768: 500px;
+    --searchbar-width-1024: 600px;
+    --searchbar-width-1200: 600px;
+
+    --searchbar-height-320: 30px;
+    --searchbar-height-480: 30px;
+    --searchbar-height-768: 30px;
+    --searchbar-height-1024: 34px;
+    --searchbar-height-1200: 38px;
+
+    --h-item-320: 40px;
+    --h-item-480: 40px;
+    --h-item-768: 40px;
+    --h-item-1024: 44px;
+    --h-item-1200: 48px;
+
+    --button-size: 20px;
+    --carousel-container-margin-top: 5px;
+    --carousel-container-margin-bottom-320: 20px;
+    --carousel-container-margin-bottom-640: 20px;
+    --carousel-container-margin-bottom-900: 20px;
+
+    --margin-between-images: 20px;
+    --h-carousel-320: 160px;
+    --h-carousel-480: 180px;
+    --h-carousel-768: 180px;
+    --h-carousel-1024: 180px;
+    --h-carousel-1200: 200px;
+    --height-transition: 100vh;
+}
+
+#root {
+    min-width: 320px;
+    min-height: 320px;
+}
+
+/* Media queries for the height of the sticky bar */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .h-sticky {
+        height: var(--h-sticky-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .h-sticky {
+        height: var(--h-sticky-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .h-sticky {
+        height: var(--h-sticky-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .h-sticky {
+        height: var(--h-sticky-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .h-sticky {
+        height: var(--h-sticky-1200);
+    }
+}
+
+/* Media queries for the margin on top of the main content. The values are the same as the height of the sticky bar */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .mt-sticky {
+        margin-top: var(--h-sticky-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .mt-sticky {
+        margin-top: var(--h-sticky-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mt-sticky {
+        margin-top: var(--h-sticky-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .mt-sticky {
+        margin-top: var(--h-sticky-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .mt-sticky {
+        margin-top: var(--h-sticky-1200);
+    }
+}
+
+/* Media queries for the margin on the sides of the canvas */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .m-canvas-side {
+        margin-left: var(--m-canvas-side-320);
+        margin-right: var(--m-canvas-side-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .m-canvas-side {
+        margin-left: var(--m-canvas-side-480);
+        margin-right: var(--m-canvas-side-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .m-canvas-side {
+        margin-left: var(--m-canvas-side-768);
+        margin-right: var(--m-canvas-side-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .m-canvas-side {
+        margin-left: var(--m-canvas-side-1024);
+        margin-right: var(--m-canvas-side-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .m-canvas-side {
+        margin-left: var(--m-canvas-side-1200);
+        margin-right: var(--m-canvas-side-1200);
+    }
+}
+
+/* Media queries for the margin on the top of the canvas */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .m-canvas-top {
+        margin-top: var(--m-canvas-top-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .m-canvas-top {
+        margin-top: var(--m-canvas-top-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .m-canvas-top {
+        margin-top: var(--m-canvas-top-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .m-canvas-top {
+        margin-top: var(--m-canvas-top-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .m-canvas-top {
+        margin-top: var(--m-canvas-top-1200);
+    }
+}
+
+/* Media queries for the height of the searchbar */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .h-searchbar {
+        height: var(--searchbar-height-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .h-searchbar {
+        height: var(--searchbar-height-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .h-searchbar {
+        height: var(--searchbar-height-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .h-searchbar {
+        height: var(--searchbar-height-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .h-searchbar {
+        height: var(--searchbar-height-1200);
+    }
+}
+
+/* Media queries for the width of the searchbar */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .w-searchbar {
+        width: var(--searchbar-width-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .w-searchbar {
+        width: var(--searchbar-width-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .w-searchbar {
+        width: var(--searchbar-width-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .w-searchbar {
+        width: var(--searchbar-width-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .w-searchbar {
+        width: var(--searchbar-width-1200);
+    }
+}
+
+/* Media queries for the width of the dataset selector */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .font-bar {
+        font-size: 12px !important;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .font-bar {
+        font-size: 12px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .font-bar {
+        font-size: 14px !important;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .font-bar {
+        font-size: 15px !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    .font-bar {
+        font-size: 15px !important;
+    }
+}
+
+/* Media queries for the width of the dataset selector */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .w-selector {
+        width: 40px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .w-selector {
+        width: 120px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .w-selector {
+        width: 120px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .w-selector {
+        width: 140px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .w-selector {
+        width: 160px;
+    }
+}
+
+/* Non media queries */
+
+body, #root {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: silver;
+}
+
+::-webkit-scrollbar-corner {
+    background: black;
+}
+
+.h-1\/10 {
+    height: 10%;
+}
+
+.w-1\/10 {
+    width: 10%;
+}
+
+.px-1\/80 {
+    padding-left: 1.25%;
+    padding-right: 1.25%;
+}
+
+.w-98 {
+    width: 98%;
+}
+
+.pl-3 {
+    padding-left: 1rem;
+}
+
+.h-9\/10 {
+    height: 90%;
+}
+
+.mb-10px {
+    margin-bottom: 10px;
+}
+
+/* Define animation for moving the search bar from the middle of the screen to its designated position */
+
+.searchBarCentered {
+    transform: translateY(calc(50vh - 50%)) scale(1.3);
+}
+
+.searchBarPositionTransition {
+    transform: translateY(0) scale(1);
+    transition: transform 1s;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(49 49 52 / 1); /* Color of the track */
+}
+
+::-webkit-scrollbar {
+    background-color: rgb(49 49 52 / 1);
+    width: 1rem;
+}

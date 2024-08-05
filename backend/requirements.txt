@@ -1,0 +1,16 @@
+pymilvus
+scikit-learn
+matplotlib
+transformers
+torch
+torchvision
+umap-learn
+numpy
+scipy
+Pillow
+tqdm
+fastapi
+uvicorn[standard]
+python-dotenv
+fastapi-utils
+python-multipart

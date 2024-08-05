@@ -1,0 +1,2 @@
+COUNTER_MAX_VALUE = 1000
+DATASETS_JSON_PATH = "/datasets.json"

@@ -1,0 +1,67 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@jest/globals": "^29.7.0",
+    "@mui/base": "^5.0.0-beta.36",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@mui/system": "latest",
+    "@pixi/filter-kawase-blur": "^5.1.1",
+    "@pixi/react": "7.1.1",
+    "@use-gesture/react": "^10.3.0",
+    "d3": "^7.8.5",
+    "hamburger-react": "latest",
+    "hammerjs": "^2.0.8",
+    "lru-cache": "^10.1.0",
+    "pixi.js": "7.3.3",
+    "rc-slider": "^10.5.0",
+    "react": "latest",
+    "react-burger-menu": "^3.0.9",
+    "react-clamp-lines": "^3.0.3",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "latest",
+    "react-dropzone": "^14.2.3",
+    "react-icons": "^4.12.0",
+    "react-lines-ellipsis": "^0.15.4",
+    "react-loading": "^2.0.3",
+    "react-multi-carousel": "latest",
+    "react-router-dom": "latest",
+    "react-scripts": "^5.0.1",
+    "react-zoom-pan-pinch": "^3.3.0",
+    "reactjs-popup": "^2.0.6",
+    "web-vitals": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "autoprefixer": "^10.4.16",
+    "jest": "latest",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

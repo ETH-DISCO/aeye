@@ -1,0 +1,12 @@
+__pycache__
+frontend/node_modules
+.idea
+frontend/build
+milvus/volumes
+.vscode
+.pytest_cache
+frontend/coverage
+backend/src/captioning/captions
+backend/src/report/kmeans_plots
+backend/src/report/tiling_plots
+backend/src/report/best_artworks_scatter.png

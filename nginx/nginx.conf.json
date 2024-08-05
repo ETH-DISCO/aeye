@@ -1,0 +1,81 @@
+{
+    "worker_processes": "auto",
+    "error_log": "/logs/error.log warn",
+    "events": {
+        "worker_connections": 1024
+    },
+    "http": {
+        "resolver": "127.0.0.11 ipv6=off",
+        "resolver_timeout": "10s",
+        "sendfile": "on",
+        "tcp_nopush": "on",
+        "log_format": {
+            "_time": "'${DOLLAR}remote_addr - ${DOLLAR}remote_user [${DOLLAR}time_local] \"${DOLLAR}request\" ${DOLLAR}status ${DOLLAR}body_bytes_sent \"${DOLLAR}http_referer\" \"${DOLLAR}http_user_agent\" rt=${DOLLAR}request_time uct=\"${DOLLAR}upstream_connect_time\" uht=\"${DOLLAR}upstream_header_time\" urt=\"${DOLLAR}upstream_response_time\"'"
+        },
+        "access_log": "/logs/access.log time",
+        "proxy_cache_path": "/data/nginx/cache levels=1:2 keys_zone=cache:10m max_size=2g",
+        "upstream": {
+            "_backend_upstream": {
+                "server": "backend:${BACKEND_PORT} max_fails=3"
+            }
+        },
+        "1server": {
+            "listen": "80",
+            "server_name": "aeye.ethz.ch www.aeye.ethz.ch",
+            "return": "301 https://${DOLLAR}server_name${DOLLAR}request_uri"
+        },
+        "2server": {
+            "listen": "443 ssl",
+            "access_log": "/logs/reverse-proxy.log  time",
+            "server_name": "aeye.ethz.ch www.aeye.ethz.ch",
+            "ssl_certificate": "${SSL_FULL_CHAIN_PATH}",
+            "ssl_certificate_key": "${SSL_PRIVATE_KEY_PATH}",
+            "locations": {
+                "/": {
+                    "proxy_pass": "http://frontend:3000"
+                },
+                "/api": {
+                    "proxy_cache": "cache",
+                    "1proxy_cache_valid": "200 302 12h",
+                    "2proxy_cache_valid": "404 1m",
+                    "proxy_pass": "http://backend_upstream/api",
+                    "1proxy_set_header": "Host ${DOLLAR}host",
+                    "2proxy_set_header": "X-Real-IP ${DOLLAR}remote_addr",
+                    "3proxy_set_header": "X-Forwarded-For ${DOLLAR}proxy_add_x_forwarded_for",
+                    "proxy_buffers": "32 4k"
+                },
+                "/best_artworks/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "alias": "/usr/share/nginx/best_artworks/"
+                },
+                "/wikiart/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "alias": "/usr/share/nginx/wikiart/"
+                },
+                "/CelebAHQ/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "alias": "/usr/share/nginx/celebahq/"
+                },
+                "/MNIST/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "rewrite": "(.*)/MNIST/resized_images/(.*)$ $1/MNIST/$2",
+                    "alias": "/usr/share/nginx/MNIST/"
+                },
+                "/CIFAR100/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "rewrite": "(.*)/CIFAR100/resized_images/(.*)$ $1/CIFAR100/$2",
+                    "alias": "/usr/share/nginx/CIFAR-100/"
+                },
+                "/FashionMNIST/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "rewrite": "(.*)/FashionMNIST/resized_images/(.*)$ $1/FashionMNIST/$2",
+                    "alias": "/usr/share/nginx/Fashion-MNIST/"
+                },
+                "/COCO2017/": {
+                    "add_header": "Access-Control-Allow-Origin *",
+                    "alias": "/usr/share/nginx/COCO-2017/"
+                }
+            }
+        }
+    }
+}

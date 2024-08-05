@@ -1,0 +1,147 @@
+/* Define variables for height of the carousel */
+:root {
+    --w-carousel-320: 80%;
+    --w-carousel-480: 80%;
+    --w-carousel-768: 70%;
+    --w-carousel-1024: 60%;
+    --w-carousel-1200: 60%;
+}
+
+.carousel-container {
+    background: transparent;
+    pointer-events: none;
+}
+
+.carousel-div {
+    background: transparent;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel {
+    height: 100%;
+    z-index: 10;
+}
+
+.react-multiple-carousel__arrow {
+    pointer-events: auto;
+}
+
+.button {
+    flex: 0 0 auto;
+    height: var(--button-size);
+    width: var(--button-size);
+}
+
+/* Media queries for the width of the carousel */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .carousel-container {
+        width: var(--w-carousel-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .carousel-container {
+        width: var(--w-carousel-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .carousel-container {
+        width: var(--w-carousel-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .carousel-container {
+        width: var(--w-carousel-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .carousel-container {
+        width: var(--w-carousel-1200);
+    }
+}
+
+/* Media queries for the height for the sliding transitions */
+
+.max-h-carousel-plus-image {
+    max-height: var(--height-transition);
+}
+
+@keyframes openAnimation {
+    0% {
+        max-height: 0;
+    }
+    100% {
+        max-height: var(--height-transition);
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        max-height: var(--height-transition);
+    }
+    100% {
+        max-height: 0;
+    }
+}
+
+.height-transition {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    overflow: hidden;
+}
+
+.height-transition.open {
+    animation-name: openAnimation;
+}
+
+.height-transition.close {
+    animation-name: closeAnimation;
+    animation-timing-function: cubic-bezier(0.1, 0.4, 0, 0.5);
+}
+
+.max-height-transition-close {
+    max-height: 0;
+}
+
+/* Media queries for the height of the carousel */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .h-carousel {
+        height: var(--h-carousel-320);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .h-carousel {
+        height: var(--h-carousel-480);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .h-carousel {
+        height: var(--h-carousel-768);
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    .h-carousel {
+        height: var(--h-carousel-1024);
+    }
+}
+
+@media (min-width: 1201px) {
+    .h-carousel {
+        height: var(--h-carousel-1200);
+    }
+}
+
+/* Margin between images */
+
+.margin-between-images-bottom {
+    margin-bottom: var(--margin-between-images);
+}
