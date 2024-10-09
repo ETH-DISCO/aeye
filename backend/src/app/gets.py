@@ -1,4 +1,3 @@
-import time
 from typing import List
 
 import torch
@@ -8,31 +7,6 @@ from ..CONSTANTS import *
 from ..db_utilities.collections import EMBEDDING_VECTOR_FIELD_NAME, ZOOM_LEVEL_VECTOR_FIELD_NAME
 
 
-# Create decorator for timing functions
-def timeit(func):
-    """
-    Decorator for timing functions.
-    @param func:
-    @return:
-    """
-
-    def wrapper(*args, **kwargs):
-        """
-        Wrapper for timing functions.
-        @param args:
-        @param kwargs:
-        @return:
-        """
-        start = time.time()
-        result = func(*args, **kwargs)
-        end = time.time()
-        print(f"Function {func.__name__} took {(end - start) * 1000} milliseconds.")
-        return result
-
-    return wrapper
-
-
-@timeit
 def get_image_info_from_text_embedding(collection: Collection, text_embeddings: torch.Tensor) -> str:
     """
     Get the image embedding from the collection for a given text.
@@ -57,7 +31,6 @@ def get_image_info_from_text_embedding(collection: Collection, text_embeddings: 
     return results[0][0].to_dict()["entity"]
 
 
-@timeit
 def get_tiles(indexes: List[int], collection: Collection) -> dict:
     """
     Get tiles from their indexes.
@@ -75,7 +48,6 @@ def get_tiles(indexes: List[int], collection: Collection) -> dict:
     return result
 
 
-@timeit
 def get_tile_from_image(index: int, collection: Collection) -> dict:
     """
     Get the tile data from the collection for a given image.
@@ -101,7 +73,6 @@ def get_tile_from_image(index: int, collection: Collection) -> dict:
         return {}
 
 
-@timeit
 def get_paths_from_indexes(indexes: List[int], collection: Collection) -> dict:
     """
     Get images from their indexes.
@@ -119,7 +90,6 @@ def get_paths_from_indexes(indexes: List[int], collection: Collection) -> dict:
     return results
 
 
-@timeit
 def get_neighbors(index: int, collection: Collection, top_k: int) -> List[dict]:
     """
     Get the neighbors of a given image.
@@ -150,7 +120,6 @@ def get_neighbors(index: int, collection: Collection, top_k: int) -> List[dict]:
     return [hit.to_dict()["entity"] for hit in results[0]]
 
 
-@timeit
 def get_first_tiles(collection: Collection) -> List[dict]:
     """
     Get tiles from first few zoom levels.

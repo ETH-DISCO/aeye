@@ -63,7 +63,7 @@ fi
 if [ "$resize" == "y" ]; then
   # Resize images
   echo "Resizing images..."
-  if ! python3 -m src.resize_images -d "$dataset_name" -o y; then
+  if ! python3 -m src.resize_images -d "$dataset_name" -o n; then
     exit
   fi
 fi
@@ -79,5 +79,4 @@ python3 -m src.dataset_creation.add_location -n "$dataset_name" -d "$directory" 
 python3 -m src.dataset_creation.generate_nginx_conf > "$HOME"/image-viz/nginx/nginx.conf.template
 # Then, update the docker-compose.yml file
 python3 -m src.dataset_creation.add_volume_to_nginx_service -d "$directory"
-# Finally, recreate the nginx service
-sudo docker compose up -d --force-recreate --no-deps nginx
+echo "Dataset added successfully."

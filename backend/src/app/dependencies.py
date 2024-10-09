@@ -167,7 +167,6 @@ class Updater:
         self.lock = threading.Lock()
 
     def __call__(self):
-        print("Updater called")
         with open(DATASETS_JSON_PATH, "r") as f:
             self.datasets = json.load(f)["datasets"]
 

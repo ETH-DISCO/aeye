@@ -97,4 +97,4 @@ if __name__ == "__main__":
 
     # Save the new configuration in nginx.conf.json
     with open(os.path.join(os.getenv(HOME), NGINX_CONF_JSON_NAME), "w") as f:
-        json.dump(nginx_config, f, indent=4)
+        json.dump(nginx_config, f, indent=4)  # noqa

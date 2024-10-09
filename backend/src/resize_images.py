@@ -73,11 +73,7 @@ if __name__ == "__main__":
         load_dotenv(os.getenv(ENV_FILE_LOCATION))
 
     # Get arguments
-    try:
-        flags = parsing()
-    except ValueError as e:
-        print(e)
-        sys.exit(1)
+    flags = parsing()
 
     # Get directory path
     directory_path = os.path.join(os.getenv(HOME), flags["directory"])
@@ -120,7 +116,7 @@ if __name__ == "__main__":
                 width = int(height * aspect_ratio)
 
             # Resize image
-            image.thumbnail((width, height), PIL.Image.ANTIALIAS)
+            image.thumbnail((width, height), PIL.Image.ANTIALIAS)  # noqa
             # Save image
             image.save(os.path.join(resized_images_dir, filename))
         except Exception as e:

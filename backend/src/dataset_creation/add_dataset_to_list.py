@@ -67,9 +67,13 @@ if __name__ == "__main__":
     # Get arguments
     flags = parsing()
 
-    # Open dataset.json file
-    with open(os.path.join(os.getenv(HOME), DATASETS_JSON_NAME), "r") as f:
-        datasets = json.load(f)
+    # Create datasets variable
+    if not os.path.exists(os.path.join(os.getenv(HOME), DATASETS_JSON_NAME)):
+        datasets = {"datasets": []}
+    else:
+        # Open dataset.json file
+        with open(os.path.join(os.getenv(HOME), DATASETS_JSON_NAME), "r") as f:
+            datasets = json.load(f)
 
     # If the list of datasets already contains the dataset, update its values
     if flags["dataset"] in [d["name"] for d in datasets["datasets"]]:
@@ -95,4 +99,4 @@ if __name__ == "__main__":
 
     # Save dataset.json file
     with open(os.path.join(os.getenv(HOME), DATASETS_JSON_NAME), "w") as f:
-        json.dump(datasets, f, indent=4)
+        json.dump(datasets, f, indent=4)  # noqa

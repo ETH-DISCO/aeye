@@ -1,9 +1,7 @@
-import logging
 from io import BytesIO
 
 from PIL import Image
 from fastapi import FastAPI, Depends, HTTPException, Request, File, UploadFile
-from fastapi_utils.timing import add_timing_middleware
 from pymilvus import db, MilvusException
 
 from . import gets
@@ -38,11 +36,6 @@ umap_getter = UMAPCollectionGetter()
 
 # Create app
 app = FastAPI()
-
-# Add timing middleware
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-add_timing_middleware(app, record=logger.info, prefix="app1", exclude="untimed")
 
 
 # Add dependency that adds header "Access-Control-Allow-Origin: *" to all responses

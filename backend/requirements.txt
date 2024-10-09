@@ -1,4 +1,4 @@
-pymilvus
+pymilvus==2.4.7
 scikit-learn
 matplotlib
 transformers
@@ -7,7 +7,7 @@ torchvision
 umap-learn
 numpy
 scipy
-Pillow
+Pillow==9.0.1
 tqdm
 fastapi
 uvicorn[standard]

@@ -38,4 +38,4 @@ python -m src.db_utilities.create_database
 echo "Starting backend..."
 
 # Start the backend
-uvicorn src.app.main:app --host 0.0.0.0 --port "$BACKEND_PORT" --reload
+uvicorn src.app.main:app --host 0.0.0.0 --port "$BACKEND_PORT" --reload --log-level critical
